@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*media Query*/
+@media screen and (max-width:620px){
+  .cart-div{
+    flex-wrap: wrap;
+  }
+  .cart-body{
+    width: 400px;
+  }
+  .main-cart{
+    width: 18rem;
+  }
+  .check-btn{
+    width: 35vw;
+  }
+  /*Footer*/
+  #p-footer{
+    font-size: 1.25em;
+  }
+  #icons{
+    display: none;
+  }
+  .slide-img{
+    height: 30vh;
+  }
+  .about-img{
+    height: 250px;
+    width: 300px;
+    margin: 0;
+  }
+  .about-p{
+    font-size: 1.10em;
+    width: 90%;
+    margin: 10px;
+    font-weight: 500;
+  }
+  .news-letter input{
+    margin-top: 20%;
+  }
+}
