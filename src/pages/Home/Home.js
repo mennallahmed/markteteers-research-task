@@ -1,9 +1,10 @@
 import React from 'react'
+import Books from '../../components/Books'
 
 const Home = () => {
   return (
     <div>
-      homepage
+      <Books/>
     </div>
   )
 }
