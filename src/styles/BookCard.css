@@ -1,0 +1,15 @@
+.card-body{
+  height: 112px !important;
+}
+.book-img{
+  height: 380px;
+}
+.title-link{
+  text-decoration: none;
+  font-size: 1em;
+  color: #1c1b1b;
+}
+.title-link:hover{
+  color: #1c1b1b;
+  opacity: .75;
+}

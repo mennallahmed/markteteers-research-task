@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getBooksAsync, showbooks } from '../Redux/books/booksSlice'
+import BookCard from './BookCard';
 
 const Books = () => {
   const books = useSelector(showbooks);
@@ -12,7 +13,7 @@ const Books = () => {
   },[])
 
   return (
-    <div>Books</div>
+    <BookCard data={books}/>
   )
 }
 
