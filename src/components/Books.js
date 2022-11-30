@@ -13,7 +13,11 @@ const Books = () => {
   },[])
 
   return (
-    <BookCard data={books}/>
+    <>
+      <header>What will you discover?</header>
+      <header>Ready To read?</header>
+      <BookCard data={books}/>
+    </>
   )
 }
 

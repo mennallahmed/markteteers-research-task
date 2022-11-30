@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Home from "./pages/Home/Home";
 import Favorite from './pages/Favorite/Favorite';
 import NotFound from './pages/NotFound';
+import BookDetails from './pages/BookDetails/BookDetails';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path='/home' element={<> <Home/> </>}/>
         <Route path='/favorites' element={<> <Favorite/> </> }/>
         <Route path='*' element={<NotFound/>}/>
-        <Route path='/book-details/:id' element={<Home/> }/>
+        <Route path='/book-details/:id' element={<BookDetails/> }/>
       </Routes>
       <Footer/>
      

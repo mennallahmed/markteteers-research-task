@@ -14,9 +14,7 @@ const BookCard = ({data}) => {
 
   return (
       <>
-      
-        <div>books</div>
-        <div className='my-container'>
+        <div className='my-container ms-2'>
         {booksData.length ? (
           <>
           {booksData[0].map((item,index) =>{
@@ -36,7 +34,6 @@ const BookCard = ({data}) => {
         ) : null}
         </div>
       </>
-    
   )
 }
 

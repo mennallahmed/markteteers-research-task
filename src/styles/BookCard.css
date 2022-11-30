@@ -13,3 +13,33 @@
   color: #1c1b1b;
   opacity: .75;
 }
+.my-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+}
+.p-details{
+  text-align: left;
+}
+.details-img{
+  width: 330px;
+  height: 430px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 8px;
+}
+.details-header{
+  width: 100px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+/*media Query*/
+@media screen and (max-width:620px){
+  .my-container{
+    justify-content: flex-start;
+  }
+  .details-img{
+    width: 300px;
+  }
+}
