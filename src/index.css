@@ -11,9 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.slide-img{
+  height: 80vh;
+  width: auto;
+}
 
 /*media Query*/
+@media screen and (max-width:768px){
+  .slide-img{
+    height: 50vh;
+  }
+}
 @media screen and (max-width:620px){
+  .slide-img{
+    height: 20vh;
+  }
   .cart-div{
     flex-wrap: wrap;
   }
@@ -32,9 +44,6 @@ code {
   }
   #icons{
     display: none;
-  }
-  .slide-img{
-    height: 30vh;
   }
   .about-img{
     height: 250px;
