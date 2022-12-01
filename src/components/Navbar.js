@@ -25,11 +25,6 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <span className="nav-link" aria-current="page">
-                  <NavLink className="nav-a" to="/home">About</NavLink>
-                </span>
-              </li>
-              <li className="nav-item">
-                <span className="nav-link" aria-current="page">
                  <NavLink className="nav-a" to="/favorites">
                   <AiFillHeart size={23}/>
                  </NavLink>

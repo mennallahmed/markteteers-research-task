@@ -58,7 +58,7 @@ const BookCard = ({data}) => {
 
   return (
       <>
-        <div className='my-container ms-2'>
+        <div className='my-container mt-5 ms-2'>
         {booksData.length ? (
           <>
           {booksData[0].map((item,index) =>{

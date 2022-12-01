@@ -14,8 +14,6 @@ const Books = () => {
 
   return (
     <>
-      <header>What will you discover?</header>
-      <header>Ready To read?</header>
       <BookCard data={books}/>
     </>
   )
