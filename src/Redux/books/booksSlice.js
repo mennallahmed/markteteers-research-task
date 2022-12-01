@@ -18,14 +18,15 @@ export const booksSlice = createSlice({
   }
 });
 
-export const getBooksAsync = (limit) => async (dispatch) => {
+export const getBooksAsync = (page,limit) => async (dispatch) => {
   try {
-    const response = await axios.get(`${API_URL}?_limit=${limit}`);
+    const response = await axios.get(`${API_URL}?_page=${page}&_limit=${limit}`);
     dispatch(getbooks(response.data));
   } catch (err) {
     throw new Error(err);
   }
 };
+
 export const getBookById = (id) => async (dispatch) => {
   try {
     const response = await axios.get(`${API_URL}/${id}`);
