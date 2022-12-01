@@ -1,8 +1,25 @@
+.card{
+  position: relative !important;
+}
 .card-body{
-  height: 112px !important;
+  height: 120px !important;
 }
 .book-img{
   height: 380px;
+  display: block;
+}
+.fav-icon{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.heart-icon{
+  color: white ;
+}
+.heart-icon:hover{
+  color: rgb(214, 28, 28);
+  cursor: pointer;
+  scale: 1.1;
 }
 .title-link{
   text-decoration: none;
