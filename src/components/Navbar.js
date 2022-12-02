@@ -5,8 +5,7 @@ import { AiFillHeart } from "react-icons/ai";
 
 const Navbar = () => {
   return (
-    <div className="container">
-      <nav className="navbar navbar-expand-lg ">
+      <nav className="nav-container sticky-top navbar navbar-expand-lg " style={{ zIndex: 1 }}>
         <div className="container-fluid">
           <span className="navbar-brand">
            <NavLink className="nav-header" to="/home">
@@ -34,7 +33,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    </div>
   )
 }
 

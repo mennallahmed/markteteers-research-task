@@ -1,4 +1,9 @@
 /* Navbar */
+.nav-container{
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 15px 0px;
+  border-radius: 0 0 2px 2px;
+}
 .nav-header{
   color: #1c1b1b;
   text-decoration: none;
