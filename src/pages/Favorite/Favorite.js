@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom';
 import { FaTrash } from "react-icons/fa";
 import { removeFromFavorite, updateFavFlag} from '../../Redux/Favorites/favoriteSlice'
+import { decrement } from '../../Redux/counter/counterSlice'
 
 let favList
 const Favorite = () => {
@@ -30,6 +31,7 @@ const Favorite = () => {
        setFavData(favList)
       //Remove the item from the redux favorite list
       dispatch(removeFromFavorite(favList))
+      dispatch(decrement())
   };
 
   let selectCategroy=(e)=>{

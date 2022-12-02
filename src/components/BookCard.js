@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom';
 import { AiFillHeart} from "react-icons/ai";
 import {addToFavorite, removeFromFavorite, updateFavFlag} from '../Redux/Favorites/favoriteSlice'
+import {decrement,increment} from '../Redux/counter/counterSlice'
 import "../styles/BookCard.css"
 
 let favList
@@ -40,6 +41,7 @@ const BookCard = ({data}) => {
       setIsActive({...isActive,[clickedItem.id]: false});
       //Remove the item from the redux favorite list
       dispatch(removeFromFavorite(favList))
+      dispatch(decrement())
     }
     else{
       //Add the clicked item to the favorite list
@@ -48,6 +50,7 @@ const BookCard = ({data}) => {
       setIsActive({...isActive,[clickedItem.id]: true});
       //Update the redux favorite list with favorite items
       dispatch(addToFavorite(favList))
+      dispatch(increment())
     }
   };
 

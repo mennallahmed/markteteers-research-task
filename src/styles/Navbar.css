@@ -38,3 +38,13 @@
   justify-content: space-between;
   align-content: center;
 }
+.fa-stack{
+  bottom: 33px;
+  left: 18px;
+  font-size: .8em;
+  position: absolute;
+  color: white;
+  background-color: rgb(236, 39, 39);
+  padding: 0 6px 0 6px;
+  border-radius: 50%; 
+}

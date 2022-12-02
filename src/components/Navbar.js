@@ -1,9 +1,12 @@
 import React from 'react'
-import "../styles/Navbar.css"
+import { useSelector} from 'react-redux'
 import { NavLink } from "react-router-dom";
 import { AiFillHeart } from "react-icons/ai";
+import "../styles/Navbar.css"
 
 const Navbar = () => {
+  let favCount =  useSelector((state) => state.counter.value)
+
   return (
       <nav className="nav-container sticky-top navbar navbar-expand-lg " style={{ zIndex: 1 }}>
         <div className="container-fluid">
@@ -24,8 +27,9 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <span className="nav-link" aria-current="page">
-                 <NavLink className="nav-a" to="/favorites">
+                 <NavLink className="nav-a" style={{position:"relative"}} to="/favorites">
                   <AiFillHeart size={23}/>
+                  <span className="fa-stack">{favCount}</span>
                  </NavLink>
                 </span>
               </li>
