@@ -41,7 +41,7 @@ const BookPagination = () => {
 
   return (
       <>
-        <div className='container d-flex justify-content-center' style={{ display: 'block', width: 700, padding: 30 }}>
+        <div className='container d-flex justify-content-center' style={{ display: 'block', padding: 30 }}>
           <Pagination>
             <Pagination.Prev onClick={()=>handelPrev()} />
             {items.map((item)=>{
