@@ -8,12 +8,14 @@ const BookPagination = () => {
 
   let [active,setActive] = useState(1)
 
+  //Get the books of the clicked page
   let handleClick = (n) =>{
     setActive(n)
+    //Get page n a limit of 50 books
     dispatch(getBooksAsync(n,50))
-
   }
 
+  // Create 5 pages Pagination
   let items = [];
   for (let number = 1; number <= 5; number++) {
     items.push(
@@ -30,7 +32,6 @@ const BookPagination = () => {
             <Pagination.Prev />
             {items.map((item)=>{
               return item
-
             })}
             <Pagination.Next />
           </Pagination>

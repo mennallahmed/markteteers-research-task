@@ -20,37 +20,32 @@ const BookCard = ({data}) => {
   },[data])
 
   useEffect(()=>{ 
+    //Update the redux favorite icon flag
     dispatch(updateFavFlag(isActive))
   },[isActive])
   
-  const addToFav = (fId) => {
+  const addToFav = (clickedItem) => {
 
-    //Get the clicked item
-    let clickedItem = booksData[0].find((item)=>{
-      return item.id === fId
-    })
-
-    //check if the item in favorite list
+    //Check if the item in favorite list
     let inFav = favList.find((item)=>{
-      return (item.id === fId? true : false)
+      return (item.id === clickedItem.id ? true : false)
     })
 
     if(inFav){
       //Remove the clicked item from the favorite list if exists
       favList  =  favList.filter((item)=>{
-        return item.id !== fId
+        return item.id !== clickedItem.id
       })
-      // change favorite icon state to false
-      setIsActive({...isActive,[fId]: false});
+      //Change favorite icon of the removed item state to false
+      setIsActive({...isActive,[clickedItem.id]: false});
       //Remove the item from the redux favorite list
       dispatch(removeFromFavorite(favList))
     }
     else{
       //Add the clicked item to the favorite list if not exist
       favList = [...favList, clickedItem]
-      // change favorite icon state to true
-      setIsActive({...isActive,[fId]: true});
-      //favList.push({...clickedItem})
+      //Change favorite icon state to true
+      setIsActive({...isActive,[clickedItem.id]: true});
       //Update the redux favorite list with favorite items
       dispatch(addToFavorite(favList))
     }
@@ -72,7 +67,7 @@ const BookCard = ({data}) => {
                   style={{
                     color: isActive[item.id] ? 'red' : '',
                   }}
-                  onClick={()=>{addToFav(item.id)}}
+                  onClick={()=>{addToFav(item)}}
                   />
                 </span>
                 <div className="card-body">

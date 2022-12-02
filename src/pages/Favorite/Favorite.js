@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom';
 import { FaTrash } from "react-icons/fa";
-//import { decrement, increment } from '../../Redux/counter/counterSlice'
 import { removeFromFavorite, updateFavFlag} from '../../Redux/Favorites/favoriteSlice'
 
 let favList
 const Favorite = () => {
-  //const count = useSelector((state) => state.counter.value)
   const favoritList = useSelector((state) => state.favorites.favoritList)
   let iconFlag =  useSelector((state) => state.favorites.favIconFlag)
   favList = favoritList
@@ -18,6 +16,7 @@ const Favorite = () => {
   let selectVal;
 
   useEffect(()=>{ 
+    //Update the redux favorite icon flag
     dispatch(updateFavFlag(isActive))
   },[isActive])
 
@@ -26,7 +25,7 @@ const Favorite = () => {
       favList  =  favList.filter((item)=>{
         return item.id !== fId
       })
-       // change favorite icon state to false
+       //Change favorite icon state to false
        setIsActive({...isActive,[fId]: false});
        setFavData(favList)
       //Remove the item from the redux favorite list
@@ -34,12 +33,15 @@ const Favorite = () => {
   };
 
   let selectCategroy=(e)=>{
+    //Get the selected option from the select box
     selectVal = e.target.value
     
     if(selectVal === ""){
+      //Reset the favorites list when no option selected or select All option
       setFavData(favoritList)
     }
     else{
+      //Filter the favorites list according to the selected option
       let filterArr = favoritList.filter((item)=>{
         return item.authors === selectVal
       })
@@ -84,21 +86,6 @@ const Favorite = () => {
           </>
         ) : null}
         </div>
-          {/*  <div>
-        <button
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-        >
-          Increment
-        </button>
-        <span>{count}</span>
-        <button
-          aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
-        >
-          Decrement
-        </button>
-      </div> */}
       </>
   )
 }

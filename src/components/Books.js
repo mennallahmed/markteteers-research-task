@@ -9,7 +9,7 @@ const Books = () => {
   const dispatch = useDispatch();
   
   useEffect(()=>{
-    //Get a limit of 50 books
+    //Get page 1 a limit of 50 books
     dispatch(getBooksAsync(1,50))
   },[])
 

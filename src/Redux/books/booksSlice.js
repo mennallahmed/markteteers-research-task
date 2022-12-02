@@ -18,8 +18,10 @@ export const booksSlice = createSlice({
   }
 });
 
+//Get all Books according to page number and limits of books
 export const getBooksAsync = (page,limit) => async (dispatch) => {
   try {
+    //Get API request to get books data
     const response = await axios.get(`${API_URL}?_page=${page}&_limit=${limit}`);
     dispatch(getbooks(response.data));
   } catch (err) {
@@ -27,15 +29,16 @@ export const getBooksAsync = (page,limit) => async (dispatch) => {
   }
 };
 
+//Get book by Id
 export const getBookById = (id) => async (dispatch) => {
   try {
+    //Get API request to get book by id
     const response = await axios.get(`${API_URL}/${id}`);
     dispatch(getById(response.data));
   } catch (err) {
     throw new Error(err);
   }
 };
-
 
 export const { getbooks,getById } = booksSlice.actions;
 export const showbooks = (state) => state.books.data;

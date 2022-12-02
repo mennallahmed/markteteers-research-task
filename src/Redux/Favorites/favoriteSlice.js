@@ -15,6 +15,7 @@ export const favoriteSlice = createSlice({
     removeFromFavorite: (state, action) => {
       state.favoritList = action.payload
     },
+    //Update the state of favorite icons flag
     updateFavFlag: (state, action) => {
       state.favIconFlag = action.payload
     },
