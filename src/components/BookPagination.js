@@ -25,15 +25,29 @@ const BookPagination = () => {
     );
   }
 
+  let handelNext = () =>{
+    if(active+1 <= 5){
+      handleClick(active+1)
+    }
+    else  handleClick(1);
+  }
+
+  let handelPrev = () =>{
+    if(active-1 >= 1){
+      handleClick(active-1)
+    }
+    else  handleClick(5);
+  }
+
   return (
       <>
         <div className='container d-flex justify-content-center' style={{ display: 'block', width: 700, padding: 30 }}>
           <Pagination>
-            <Pagination.Prev />
+            <Pagination.Prev onClick={()=>handelPrev()} />
             {items.map((item)=>{
               return item
             })}
-            <Pagination.Next />
+            <Pagination.Next onClick={()=>handelNext()} />
           </Pagination>
         </div>
       </>
