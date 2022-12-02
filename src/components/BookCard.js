@@ -24,7 +24,7 @@ const BookCard = ({data}) => {
     dispatch(updateFavFlag(isActive))
   },[isActive])
   
-  const addToFav = (clickedItem) => {
+  const updateFavList = (clickedItem) => {
 
     //Check if the item in favorite list
     let inFav = favList.find((item)=>{
@@ -32,7 +32,7 @@ const BookCard = ({data}) => {
     })
 
     if(inFav){
-      //Remove the clicked item from the favorite list if exists
+      //Remove the clicked item from the favorite list
       favList  =  favList.filter((item)=>{
         return item.id !== clickedItem.id
       })
@@ -42,7 +42,7 @@ const BookCard = ({data}) => {
       dispatch(removeFromFavorite(favList))
     }
     else{
-      //Add the clicked item to the favorite list if not exist
+      //Add the clicked item to the favorite list
       favList = [...favList, clickedItem]
       //Change favorite icon state to true
       setIsActive({...isActive,[clickedItem.id]: true});
@@ -67,7 +67,7 @@ const BookCard = ({data}) => {
                   style={{
                     color: isActive[item.id] ? 'red' : '',
                   }}
-                  onClick={()=>{addToFav(item)}}
+                  onClick={()=>{updateFavList(item)}}
                   />
                 </span>
                 <div className="card-body">
